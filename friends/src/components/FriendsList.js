@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import {axiosWithAuth} from "../utils/axiosWithAuth";
 
 const FriendsList = () => {
@@ -23,25 +24,12 @@ const FriendsList = () => {
 
     }, []);
 
-    // useEffect(() => {
-
-
-    // }, friends);
-
-    if (isLoading && !errorMessage)
+    if (isLoading || errorMessage)
         {
             return (
                 <div>
-                    <p className="loading">Loading information...</p>
-                </div>
-            )
-        }
-
-    if (errorMessage)
-        {
-            return (
-                <div>
-                    <p className="serverAcessError">Could not access server.</p>
+                    {isLoading && !errorMessage ? <p className="loading">Loading information...</p> : ""}
+                    {errorMessage ? <p className="serverAcessError">{errorMessage}</p> : ""}
                 </div>
             )
         }
@@ -53,9 +41,9 @@ const FriendsList = () => {
             { friends.length === 0 ?
                 <h2>No friends found.</h2>
                 :
-            friends.map(friendData => {
+            friends.map((friendData, positionInList) => {
 
-                let dividerColor = "dividerColor" + ((friendData.id % 3) + 1);
+                let dividerColor = "dividerColor" + ((positionInList % 3) + 1);
 
                 return (
                     <div key={friendData.id} className="friendEntry">
@@ -65,6 +53,10 @@ const FriendsList = () => {
                     </div>
                     )
             })}
+
+            <Link to="friends/add">
+                <h2>Add a new Friend</h2>
+            </Link>
         </div>
     )
 

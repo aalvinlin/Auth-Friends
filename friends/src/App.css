@@ -22,7 +22,7 @@ body {
     margin: 0 auto 5%;
 }
 
-.loginForm {
+.loginForm, .addFriendForm {
 
     margin-top: 10vh;
     
@@ -65,7 +65,7 @@ button:hover, button:active {
     color: #FABC16;
 }
 
-.loginError, .serverAcessError {
+.formError, .serverAcessError {
     color: #E91E23;
 }
 
@@ -87,4 +87,12 @@ hr {
 .dividerColor3 {
     color: #FABC16;
     border-color: #FABC16;
+}
+
+a {
+    color: #666666;
+}
+
+a:hover, a:active {
+    color: #CCCCCC;
 }

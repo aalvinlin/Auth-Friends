@@ -49,7 +49,7 @@ const LoginForm = (props) => {
 
             <button name="submit" onClick={handleSubmit}>&#9679; Log in &#9679;</button>
 
-            <p className="loginError">{errorMessage}</p>
+            <p className="formError">{errorMessage}</p>
         </form>
     )
 
