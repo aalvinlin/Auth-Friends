@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 const LoginForm = () => {
 
@@ -8,6 +10,7 @@ const LoginForm = () => {
     }
 
     const [userData, setUserData] = useState(initialData);
+    const [errorMessage, setErrorMessage] = useState("");
 
     const handleChange = (event) => {
         setUserData({...userData, [event.target.name]: event.target.value });
@@ -17,6 +20,17 @@ const LoginForm = () => {
         event.preventDefault();
 
         console.log("submitted with", userData.username, userData.password);
+
+        axios.post("http://localhost:5000/api/login", userData)
+
+            .then (response => {
+                console.log("Logged in successfully:", response);
+            })
+
+            .catch (error => {
+                console.log("Could not login. Error:", error);
+                setErrorMessage("Username and/or password incorrect.");
+            })
     }
 
     return (
@@ -31,6 +45,8 @@ const LoginForm = () => {
             </label>
 
             <button name="submit" onClick={handleSubmit}>Log in</button>
+
+            <p className="loginError">{errorMessage}</p>
         </form>
     )
 
