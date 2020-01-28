@@ -1,0 +1,48 @@
+@font-face {
+    font-family: "friendsFont";
+    src: url("./fonts/GABRWFFR.TTF") format("truetype");
+}
+
+/* red dot: #E91E23
+blue dot: #02B2E7
+yellow dot: #FABC16 */
+
+* {
+    box-sizing: border-box;
+    font-family: "friendsFont", Verdana;
+}
+
+body {
+    text-align: center;
+}
+
+.logo {
+    max-width: 90%;
+}
+
+.loginForm {
+
+    margin-top: 10vh;
+    
+    /* display: flex;
+    flex-direction: column; */
+}
+
+label {
+    font-size: 2rem;
+}
+
+input, button {
+    line-height: 2rem;
+    padding: 0 0.5rem;
+
+    display: block;
+    margin: 2rem auto;
+}
+
+button {
+    font-size: 2rem;
+    line-height: 4rem;
+    padding: 0 1rem;
+    cursor: pointer;
+}
