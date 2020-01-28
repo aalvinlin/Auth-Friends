@@ -52,6 +52,7 @@ const FriendsList = () => {
 
                 <div>
                     <h1>Your Friends</h1>
+                    <hr className="dividerColor1" />
                     <h2>No friends found.</h2>
                 </div>
             )
@@ -60,6 +61,7 @@ const FriendsList = () => {
     return (
         <div>
             <h1>Your Friends</h1>
+            <hr className="dividerColor1" />
             { friends.map(friendData => {
 
                 let dividerColor = "dividerColor" + ((friendData.id % 3) + 1);

@@ -36,10 +36,18 @@ label {
 
 input, button {
     line-height: 2rem;
-    padding: 0 0.5rem;
+    text-align: center;
 
     display: block;
     margin: 2rem auto;
+}
+
+input {
+
+    font-size: 2rem;
+
+    border: 0 solid;
+    border-bottom: 2px solid;
 }
 
 button {
@@ -47,6 +55,14 @@ button {
     line-height: 4rem;
     padding: 0 1rem;
     cursor: pointer;
+
+    border: none;
+    background-color: transparent;
+}
+
+button:hover, button:active {
+
+    color: #FABC16;
 }
 
 .loginError, .serverAcessError {
@@ -59,13 +75,16 @@ hr {
 }
 
 .dividerColor1 {
+    color: #E91E23;
     border-color: #E91E23;
 }
 
 .dividerColor2 {
+    color: #02B2E7;
     border-color: #02B2E7;
 }
 
 .dividerColor3 {
+    color: #FABC16;
     border-color: #FABC16;
 }

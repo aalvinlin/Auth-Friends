@@ -40,14 +40,14 @@ const LoginForm = (props) => {
         <form name="loginForm" className="loginForm">
 
             <label htmlFor="username">Username:
-                <input type="text" name="username" value={userData.username} onChange={handleChange} />
+                <input type="text" name="username" value={userData.username} onChange={handleChange}  className="dividerColor1"/>
             </label>
 
             <label htmlFor="password">Password:
-                <input type="password" name="password" value={userData.password} onChange={handleChange} />
+                <input type="password" name="password" value={userData.password} onChange={handleChange}  className="dividerColor2"/>
             </label>
 
-            <button name="submit" onClick={handleSubmit}>Log in</button>
+            <button name="submit" onClick={handleSubmit}>&#9679; Log in &#9679;</button>
 
             <p className="loginError">{errorMessage}</p>
         </form>
