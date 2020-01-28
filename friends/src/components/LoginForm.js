@@ -24,6 +24,9 @@ const LoginForm = (props) => {
 
             .then (response => {
                 console.log("Logged in successfully:", response);
+
+                // store token for authenticated access
+                localStorage.setItem("token", response.data.payload);
                 props.history.push("friends");
             })
 

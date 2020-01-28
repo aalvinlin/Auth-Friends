@@ -52,3 +52,20 @@ button {
 .loginError, .serverAcessError {
     color: #E91E23;
 }
+
+hr {
+    border: 2px solid;
+    width: 50%;
+}
+
+.dividerColor1 {
+    border-color: #E91E23;
+}
+
+.dividerColor2 {
+    border-color: #02B2E7;
+}
+
+.dividerColor3 {
+    border-color: #FABC16;
+}
