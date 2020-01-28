@@ -18,6 +18,8 @@ body {
 
 .logo {
     max-width: 90%;
+    display: block;
+    margin: 0 auto 5%;
 }
 
 .loginForm {
@@ -47,6 +49,6 @@ button {
     cursor: pointer;
 }
 
-.loginError {
+.loginError, .serverAcessError {
     color: #E91E23;
 }

@@ -1,6 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+
+import ProtectedRoute from "./components/ProtectedRoute";
 import LoginForm from "./components/LoginForm";
+import FriendsList from "./components/FriendsList";
 
 import "./App.css";
 
@@ -17,7 +20,7 @@ export default () => (
     <Switch>
       <Route exact path="/" component={LoginForm} />
       <Route exact path="/login" component={LoginForm} />
-      {/* <PrivateRoute path="/friends" component={FriendsList} /> */}
+      <Route path="/friends" component={FriendsList} />
     </Switch>
   </Router>
 

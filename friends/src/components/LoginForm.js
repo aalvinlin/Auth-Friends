@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useHistory } from "react";
 import axios from "axios";
-import { axiosWithAuth } from "../utils/axiosWithAuth";
 
-const LoginForm = () => {
+const LoginForm = (props) => {
 
     const initialData = {
         username: "",
@@ -25,6 +24,7 @@ const LoginForm = () => {
 
             .then (response => {
                 console.log("Logged in successfully:", response);
+                props.history.push("friends");
             })
 
             .catch (error => {
