@@ -46,23 +46,14 @@ const FriendsList = () => {
             )
         }
 
-    if (friends.length === 0)
-        {
-            return (
-
-                <div>
-                    <h1>Your Friends</h1>
-                    <hr className="dividerColor1" />
-                    <h2>No friends found.</h2>
-                </div>
-            )
-        }
-
     return (
         <div>
             <h1>Your Friends</h1>
             <hr className="dividerColor1" />
-            { friends.map(friendData => {
+            { friends.length === 0 ?
+                <h2>No friends found.</h2>
+                :
+            friends.map(friendData => {
 
                 let dividerColor = "dividerColor" + ((friendData.id % 3) + 1);
 

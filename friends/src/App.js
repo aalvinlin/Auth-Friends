@@ -20,7 +20,7 @@ export default () => (
     <Switch>
       <Route exact path="/" component={LoginForm} />
       <Route exact path="/login" component={LoginForm} />
-      <Route path="/friends" component={FriendsList} />
+      <ProtectedRoute path="/friends" component={FriendsList} />
     </Switch>
   </Router>
 
