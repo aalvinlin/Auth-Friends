@@ -34,7 +34,7 @@ label {
     font-size: 2rem;
 }
 
-input, button {
+input, button, select {
     line-height: 2rem;
     text-align: center;
 
@@ -42,7 +42,7 @@ input, button {
     margin: 2rem auto;
 }
 
-input {
+input, select {
 
     font-size: 2rem;
 
