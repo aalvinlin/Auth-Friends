@@ -55,7 +55,13 @@ const FriendsList = () => {
             })}
 
             <Link to="friends/add">
-                <h2>Add a new Friend</h2>
+                <h2>Add a new friend</h2>
+            </Link>
+            <Link to="friends/edit">
+                <h2>Edit an existing friend</h2>
+            </Link>
+            <Link to="friends/delete">
+                <h2>Delete a friend</h2>
             </Link>
         </div>
     )
