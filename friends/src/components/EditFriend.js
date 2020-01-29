@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import {axiosWithAuth} from "../utils/axiosWithAuth";
-import e from "express";
 
 const EditFriend = (props) => {
 
@@ -40,9 +39,12 @@ const EditFriend = (props) => {
     const handleChange = (event) => {
 
         // if the dropdown menu is changed to a different option, change all input fields.
-        if (event.target.type === "select")
+        if (event.target.type === "select-one")
             {
-                setFriendData({...friendData, [event.target.name]: event.target.value });
+                let friendChosen = existingFriends.filter(friend => friend.name === event.target.value)[0];
+
+                // overwrite all other form values with values for selected friend
+                setFriendData(friendChosen);
             }
         else
             { setFriendData({...friendData, [event.target.name]: event.target.value }); }
@@ -81,7 +83,7 @@ const EditFriend = (props) => {
 
             <label htmlFor="name">Name:
                 <select name="name" value={friendData.name} onChange={handleChange}  className="dividerColor1">
-                    { existingFriends.map(friend => <option value={friend.name}>{friend.name}</option>) }
+                    { existingFriends.map(friend => <option value={friend.name} key={"option" + friend.id}>{friend.name}</option>) }
                 </select>
             </label>
 
